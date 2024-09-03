@@ -6,8 +6,6 @@ export const WalletConnection = () => {
   const [address, setAddress] = useState('');
 
   const connectWallet = () => {
-    // This is a placeholder for actual OKX wallet connection logic
-    // You would typically use a library or SDK provided by OKX here
     const mockAddress = '0x' + Math.random().toString(36).substring(2, 15);
     setAddress(mockAddress);
     setIsConnected(true);
@@ -19,14 +17,14 @@ export const WalletConnection = () => {
   };
 
   return (
-    <div className="flex items-center justify-between p-4 bg-gray-100 rounded-lg">
+    <div className="flex items-center justify-between p-4 bg-secondary rounded-lg">
       {isConnected ? (
         <>
-          <span className="text-sm">Connected: {address}</span>
-          <Button onClick={disconnectWallet} variant="outline">Disconnect</Button>
+          <span className="text-sm text-muted-foreground">Connected: {address}</span>
+          <Button onClick={disconnectWallet} variant="outline" className="bg-muted text-foreground hover:bg-muted/90">Disconnect</Button>
         </>
       ) : (
-        <Button onClick={connectWallet}>Connect OKX Wallet</Button>
+        <Button onClick={connectWallet} className="bg-primary hover:bg-primary/90 w-full">Connect OKX Wallet</Button>
       )}
     </div>
   );

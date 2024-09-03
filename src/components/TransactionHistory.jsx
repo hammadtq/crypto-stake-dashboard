@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 export const TransactionHistory = () => {
-  // This is mock data. In a real application, you would fetch this from your backend or blockchain
   const transactions = [
     { id: 1, type: 'Stake', amount: '0.5 BTC', date: '2024-03-15' },
     { id: 2, type: 'Mint', amount: '0.5 LST', date: '2024-03-15' },
@@ -12,17 +11,17 @@ export const TransactionHistory = () => {
   ];
 
   return (
-    <Card className="mt-6">
+    <Card className="mt-6 bg-secondary">
       <CardHeader>
-        <CardTitle>Recent Transactions</CardTitle>
+        <CardTitle className="text-2xl">Recent Transactions</CardTitle>
       </CardHeader>
       <CardContent>
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Type</TableHead>
-              <TableHead>Amount</TableHead>
-              <TableHead>Date</TableHead>
+              <TableHead className="text-muted-foreground">Type</TableHead>
+              <TableHead className="text-muted-foreground">Amount</TableHead>
+              <TableHead className="text-muted-foreground">Date</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
