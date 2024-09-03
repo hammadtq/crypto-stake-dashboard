@@ -21,7 +21,7 @@ export const WalletConnection = () => {
       {isConnected ? (
         <>
           <span className="text-sm text-muted-foreground">Connected: {address}</span>
-          <Button onClick={disconnectWallet} variant="outline" className="bg-muted text-foreground hover:bg-muted/90">Disconnect</Button>
+          <Button onClick={disconnectWallet} variant="outline">Disconnect</Button>
         </>
       ) : (
         <Button onClick={connectWallet} className="bg-primary hover:bg-primary/90 w-full">Connect OKX Wallet</Button>
